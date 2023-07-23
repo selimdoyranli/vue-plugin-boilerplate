@@ -1,9 +1,10 @@
 {
   "name": "vue-plugin-boilerplate",
   "version": "0.0.1",
-  "description": "Starter template for vue2&3 plugin development 🟩📦",
+  "description": "Boilerplate for vue 2&3 plugin development 🟩📦",
   "keywords": [
     "vue plugin",
+    "vue plugin boilerplate",
     "vue plugin template",
     "vue plugin starter"
   ],
@@ -12,7 +13,6 @@
     "selimdoyranli <selimdoyranli@gmail.com> (https://selimdoyranli.com)"
   ],
   "bugs": "selimdoyranli@gmail.com",
-  "homepage": "https://vue-plugin-boilerplate.vercel.app",
   "repository": {
     "type": "git",
     "url": "https://github.com/selimdoyranli/vue-plugin-boilerplate"
