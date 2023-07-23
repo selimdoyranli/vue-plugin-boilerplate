@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue-demi/lib/index.iife.js"></script>
+    <script src="../../dist/vue3/vue-plugin-starter.global.js"></script>
+    <link rel="stylesheet" href="../../dist/vue3/vue-plugin-starter.css" />
+  </head>
+  <body>
+    <div id="app">
+      <plugin-starter></plugin-starter>
+    </div>
+
+    <script>
+      const app = Vue.createApp({})
+
+      app.use(PluginStarter)
+
+      app.mount('#app')
+    </script>
+  </body>
+</html>

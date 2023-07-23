@@ -1,0 +1,14 @@
+.vue-plugin-starter {
+  --color-border: #222;
+  $color-text: #42b883;
+
+  color: $color-text;
+
+  &--active {
+    border: 2px solid var(--color-border);
+  }
+
+  button {
+    color: inherit;
+  }
+}

@@ -1,0 +1,10 @@
+dist
+/vue2
+/vue3
+/dev
+/docs
+/meta
+*.min.*
+assets/**/*/vendor
+static/
+public/
