@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <plugin-starter />
+    <plugin-boilerplate />
   </div>
 </template>
 
 <script setup>
-import PluginStarter from '../../dist/vue3'
+import PluginBoilerplate from '../../dist/vue3'
 </script>
 
 <style scoped>
-@import '../../dist/vue3/vue-plugin-starter.css';
+@import '../../dist/vue3/vue-plugin-boilerplate.css';
 </style>

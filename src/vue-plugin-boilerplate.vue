@@ -1,5 +1,5 @@
 <template lang="pug">
-.vue-plugin-starter(ref="rootRef" :class="[activeClass]")
+.vue-plugin-boilerplate(ref="rootRef" :class="[activeClass]")
   button(@click="toggle") Toggle
 </template>
 
@@ -7,9 +7,9 @@
 import { defineComponent, ref, reactive, computed } from 'vue-demi'
 
 export default defineComponent({
-  name: 'PluginStarter',
+  name: 'PluginBoilerplate',
   setup() {
-    const baseClassName = 'vue-plugin-starter'
+    const baseClassName = 'vue-plugin-boilerplate'
 
     const rootRef = ref(null)
 
@@ -38,4 +38,4 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" src="./vue-plugin-starter.scss"></style>
+<style lang="scss" src="./vue-plugin-boilerplate.scss"></style>

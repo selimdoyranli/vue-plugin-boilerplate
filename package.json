@@ -1,5 +1,5 @@
 {
-  "name": "vue-plugin-starter",
+  "name": "vue-plugin-boilerplate",
   "version": "0.0.1",
   "description": "Starter template for vue2&3 plugin development 🟩📦",
   "keywords": [
@@ -12,23 +12,23 @@
     "selimdoyranli <selimdoyranli@gmail.com> (https://selimdoyranli.com)"
   ],
   "bugs": "selimdoyranli@gmail.com",
-  "homepage": "https://vue-plugin-starter.vercel.app",
+  "homepage": "https://vue-plugin-boilerplate.vercel.app",
   "repository": {
     "type": "git",
-    "url": "https://github.com/selimdoyranli/vue-plugin-starter"
+    "url": "https://github.com/selimdoyranli/vue-plugin-boilerplate"
   },
   "main": "dist/vue3/index.js",
-  "module": "dist/vue3/vue-plugin-starter.mjs",
-  "browser": "dist/vue3/vue-plugin-starter.global.js",
-  "unpkg": "dist/vue3/vue-plugin-starter.global.js",
+  "module": "dist/vue3/vue-plugin-boilerplate.mjs",
+  "browser": "dist/vue3/vue-plugin-boilerplate.global.js",
+  "unpkg": "dist/vue3/vue-plugin-boilerplate.global.js",
   "exports": {
     ".": {
-      "require": "./dist/vue3/vue-plugin-starter.cjs",
+      "require": "./dist/vue3/vue-plugin-boilerplate.cjs",
       "import": "./dist/vue3/index.js",
-      "browser": "./dist/vue3/vue-plugin-starter.global.js",
-      "umd": "./dist/vue3/vue-plugin-starter.umd.js",
-      "unpkg": "./dist/vue3/vue-plugin-starter.global.js",
-      "module": "./dist/vue3/vue-plugin-starter.mjs"
+      "browser": "./dist/vue3/vue-plugin-boilerplate.global.js",
+      "umd": "./dist/vue3/vue-plugin-boilerplate.umd.js",
+      "unpkg": "./dist/vue3/vue-plugin-boilerplate.global.js",
+      "module": "./dist/vue3/vue-plugin-boilerplate.mjs"
     },
     "./vue2": "./dist/vue2/index.js"
   },

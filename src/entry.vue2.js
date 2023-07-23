@@ -1,11 +1,11 @@
 // Import vue component
-import component from './vue-plugin-starter.vue'
+import component from './vue-plugin-boilerplate.vue'
 
 // install function executed by Vue.use()
 const install = function installComponent(Vue) {
   if (install.installed) return
   install.installed = true
-  Vue.component('PluginStarter', component)
+  Vue.component('PluginBoilerplate', component)
 }
 
 // Create module definition for Vue.use()

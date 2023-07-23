@@ -1,1 +1,1 @@
-# vue-plugin-starter
+# vue-plugin-boilerplate

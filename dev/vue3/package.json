@@ -1,5 +1,5 @@
 {
-  "name": "vue-plugin-starter-vue3-serve",
+  "name": "vue-plugin-boilerplate-vue3-serve",
   "scripts": {
     "serve": "vue-cli-service serve serve.js"
   },

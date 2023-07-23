@@ -1,20 +1,20 @@
 <template>
   <div id="app">
-    <plugin-starter />
+    <plugin-boilerplate />
   </div>
 </template>
 
 <script>
-import PluginStarter from '../../dist/vue2'
+import PluginBoilerplate from '../../dist/vue2'
 
 export default {
   name: 'ServeDev',
   components: {
-    PluginStarter
+    PluginBoilerplate
   }
 }
 </script>
 
 <style>
-@import '../../dist/vue2/vue-plugin-starter.css';
+@import '../../dist/vue2/vue-plugin-boilerplate.css';
 </style>

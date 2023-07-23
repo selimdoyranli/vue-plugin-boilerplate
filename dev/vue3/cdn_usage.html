@@ -7,18 +7,18 @@
     <title>Document</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://unpkg.com/vue-demi/lib/index.iife.js"></script>
-    <script src="../../dist/vue3/vue-plugin-starter.global.js"></script>
-    <link rel="stylesheet" href="../../dist/vue3/vue-plugin-starter.css" />
+    <script src="../../dist/vue3/vue-plugin-boilerplate.global.js"></script>
+    <link rel="stylesheet" href="../../dist/vue3/vue-plugin-boilerplate.css" />
   </head>
   <body>
     <div id="app">
-      <plugin-starter></plugin-starter>
+      <plugin-boilerplate></plugin-boilerplate>
     </div>
 
     <script>
       const app = Vue.createApp({})
 
-      app.use(PluginStarter)
+      app.use(PluginBoilerplate)
 
       app.mount('#app')
     </script>

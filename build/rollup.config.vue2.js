@@ -37,7 +37,7 @@ const baseConfig = {
       preventAssignment: true
     },
     css: {
-      output: 'dist/vue2/vue-plugin-starter.css'
+      output: 'dist/vue2/vue-plugin-boilerplate.css'
     },
     vue: {
       css: false,
@@ -85,7 +85,7 @@ if (!argv.format || argv.format === 'umd') {
         format: 'umd',
         exports: 'named',
         globals,
-        name: 'PluginStarter',
+        name: 'PluginBoilerplate',
         plugins: [
           terser({
             ...baseConfig.plugins.terser
@@ -97,7 +97,7 @@ if (!argv.format || argv.format === 'umd') {
         format: 'umd',
         exports: 'named',
         globals,
-        name: 'PluginStarter',
+        name: 'PluginBoilerplate',
         plugins: [
           terser({
             ...baseConfig.plugins.terser
@@ -105,18 +105,18 @@ if (!argv.format || argv.format === 'umd') {
         ]
       },
       {
-        file: 'dist/vue2/vue-plugin-starter.umd.js',
+        file: 'dist/vue2/vue-plugin-boilerplate.umd.js',
         format: 'umd',
         exports: 'named',
         globals,
-        name: 'PluginStarter'
+        name: 'PluginBoilerplate'
       },
       {
-        file: 'dist/vue2/vue-plugin-starter.umd.min.js',
+        file: 'dist/vue2/vue-plugin-boilerplate.umd.min.js',
         format: 'umd',
         exports: 'named',
         globals,
-        name: 'PluginStarter',
+        name: 'PluginBoilerplate',
         plugins: [
           terser({
             ...baseConfig.plugins.terser
@@ -124,16 +124,16 @@ if (!argv.format || argv.format === 'umd') {
         ]
       },
       {
-        file: 'dist/vue2/vue-plugin-starter.global.js',
+        file: 'dist/vue2/vue-plugin-boilerplate.global.js',
         format: 'umd',
         globals,
-        name: 'PluginStarter'
+        name: 'PluginBoilerplate'
       },
       {
-        file: 'dist/vue2/vue-plugin-starter.global.min.js',
+        file: 'dist/vue2/vue-plugin-boilerplate.global.min.js',
         format: 'umd',
         globals,
-        name: 'PluginStarter',
+        name: 'PluginBoilerplate',
         plugins: [
           terser({
             ...baseConfig.plugins.terser
@@ -175,12 +175,12 @@ if (!argv.format || argv.format === 'es') {
     external,
     output: [
       {
-        file: 'dist/vue2/vue-plugin-starter.mjs',
+        file: 'dist/vue2/vue-plugin-boilerplate.mjs',
         format: 'esm',
         exports: 'named'
       },
       {
-        file: 'dist/vue2/vue-plugin-starter.min.mjs',
+        file: 'dist/vue2/vue-plugin-boilerplate.min.mjs',
         format: 'esm',
         exports: 'named',
         plugins: [
@@ -226,17 +226,17 @@ if (!argv.format || argv.format === 'cjs') {
     output: [
       {
         compact: true,
-        file: 'dist/vue2/vue-plugin-starter.cjs',
+        file: 'dist/vue2/vue-plugin-boilerplate.cjs',
         format: 'cjs',
-        name: 'PluginStarter',
+        name: 'PluginBoilerplate',
         exports: 'named',
         globals
       },
       {
         compact: true,
-        file: 'dist/vue2/vue-plugin-starter.min.cjs',
+        file: 'dist/vue2/vue-plugin-boilerplate.min.cjs',
         format: 'cjs',
-        name: 'PluginStarter',
+        name: 'PluginBoilerplate',
         exports: 'named',
         globals,
         plugins: [
