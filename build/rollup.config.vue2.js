@@ -7,6 +7,7 @@ import replace from '@rollup/plugin-replace'
 import babel from '@rollup/plugin-babel'
 import css from 'rollup-plugin-css-only'
 import { terser } from 'rollup-plugin-terser'
+import dts from 'rollup-plugin-dts'
 import minimist from 'minimist'
 
 // Get browserslist config and remove ie from es build targets
@@ -265,6 +266,16 @@ if (!argv.format || argv.format === 'cjs') {
   }
   buildFormats.push(cjsConfig)
 }
+
+const typesConfig = {
+  input: './src/types.ts',
+  output: [
+    { file: 'dist/vue2/index.d.ts', format: 'es' },
+    { file: 'vue2/index.d.ts', format: 'es' }
+  ],
+  plugins: [dts()]
+}
+buildFormats.push(typesConfig)
 
 // Export config
 export default buildFormats

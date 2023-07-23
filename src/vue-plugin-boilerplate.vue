@@ -5,11 +5,12 @@
 
 <script lang="ts">
 import { defineComponent, ref, reactive, computed } from 'vue-demi'
+import type { BaseClassNameTypes } from '@/types'
 
 export default defineComponent({
   name: 'PluginBoilerplate',
   setup() {
-    const baseClassName = 'vue-plugin-boilerplate'
+    const baseClassName: BaseClassNameTypes = 'vue-plugin-boilerplate'
 
     const rootRef = ref(null)
 
