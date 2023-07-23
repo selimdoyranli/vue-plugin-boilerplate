@@ -15,7 +15,7 @@
     "sourceMap": true,
     "baseUrl": ".",
     "newLine": "lf",
-    "types": ["node", "@types/node", "vue-prev", "vue-next"],
+    "types": ["node", "@types/node"],
     "paths": {
       "@/*": ["src/*"]
     },
