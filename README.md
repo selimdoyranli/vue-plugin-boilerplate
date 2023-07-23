@@ -112,6 +112,9 @@ yarn lint:stylelint:fix
 
 # run prettier
 yarn prettier
+
+# check types
+yarn type:check
 ```
 
 #### Git
