@@ -39,4 +39,6 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" src="./vue-plugin-boilerplate.scss"></style>
+<style lang="scss">
+@import './vue-plugin-boilerplate.scss';
+</style>

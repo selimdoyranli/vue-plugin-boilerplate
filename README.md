@@ -66,12 +66,12 @@ yarn build:vue3 # build for vue3
 ```
 
 ```bash
-# Serve
+# Dev
 
 cd dev/vue3
 
 yarn install
-yarn serve
+yarn dev
 ```
 
 ### Vue2
@@ -81,12 +81,12 @@ yarn build:vue2 # build for vue2
 ```
 
 ```bash
-# Serve
+# Dev
 
 cd dev/vue2
 
 yarn install
-yarn serve
+yarn dev
 ```
 
 ### Vue 2&3

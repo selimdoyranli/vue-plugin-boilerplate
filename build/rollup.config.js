@@ -1,15 +1,25 @@
 import fs from 'fs'
 import path from 'path'
-import vue from 'vue-next-rollup-plugin-vue'
 import alias from '@rollup/plugin-alias'
 import commonjs from '@rollup/plugin-commonjs'
 import replace from '@rollup/plugin-replace'
 import babel from '@rollup/plugin-babel'
 import scss from 'rollup-plugin-scss'
+import sass from 'sass'
 import css from 'rollup-plugin-css-only'
 import { terser } from 'rollup-plugin-terser'
 import dts from 'rollup-plugin-dts'
 import minimist from 'minimist'
+
+const projectRoot = path.resolve(__dirname, '..')
+const argv = minimist(process.argv.slice(2))
+const VUE_VERSION = process.env.VUE_VERSION
+
+// Require vue package by version
+const vue = require(`vue-rollup-plugin-vue${VUE_VERSION}`)
+
+// Set vue directory name by vue version for src, dist and entry file
+const VUE_DIRNAME = `vue${VUE_VERSION}`
 
 // Get browserslist config and remove ie from es build targets
 const esbrowserslist = fs
@@ -18,12 +28,8 @@ const esbrowserslist = fs
   .split('\n')
   .filter(entry => entry && entry.substring(0, 2) !== 'ie')
 
-const argv = minimist(process.argv.slice(2))
-
-const projectRoot = path.resolve(__dirname, '..')
-
 const baseConfig = {
-  input: 'src/entry.vue3.js',
+  input: `src/entry.${VUE_DIRNAME}.js`,
   plugins: {
     preVue: [
       alias({
@@ -40,11 +46,9 @@ const baseConfig = {
     },
     scss: {
       fileName: 'vue-plugin-boilerplate.css',
-      outputStyle: 'compressed'
+      sass: sass
     },
-    css: {
-      output: 'dist/vue3/vue-plugin-boilerplate.css'
-    },
+    css: {},
     vue: {
       css: false,
       template: {
@@ -87,7 +91,7 @@ if (!argv.format || argv.format === 'umd') {
     external,
     output: [
       {
-        file: 'dist/vue3/index.js',
+        file: `dist/${VUE_DIRNAME}/index.js`,
         format: 'umd',
         exports: 'named',
         globals,
@@ -99,14 +103,14 @@ if (!argv.format || argv.format === 'umd') {
         ]
       },
       {
-        file: 'dist/vue3/vue-plugin-boilerplate.umd.js',
+        file: `dist/${VUE_DIRNAME}/vue-plugin-boilerplate.umd.js`,
         format: 'umd',
         exports: 'named',
         globals,
         name: 'PluginBoilerplate'
       },
       {
-        file: 'dist/vue3/vue-plugin-boilerplate.umd.min.js',
+        file: `dist/${VUE_DIRNAME}/vue-plugin-boilerplate.umd.min.js`,
         format: 'umd',
         exports: 'named',
         globals,
@@ -118,13 +122,13 @@ if (!argv.format || argv.format === 'umd') {
         ]
       },
       {
-        file: 'dist/vue3/vue-plugin-boilerplate.global.js',
+        file: `dist/${VUE_DIRNAME}/vue-plugin-boilerplate.global.js`,
         format: 'umd',
         globals,
         name: 'PluginBoilerplate'
       },
       {
-        file: 'dist/vue3/vue-plugin-boilerplate.global.min.js',
+        file: `dist/${VUE_DIRNAME}/vue-plugin-boilerplate.global.min.js`,
         format: 'umd',
         globals,
         name: 'PluginBoilerplate',
@@ -172,12 +176,12 @@ if (!argv.format || argv.format === 'es') {
     external,
     output: [
       {
-        file: 'dist/vue3/vue-plugin-boilerplate.mjs',
+        file: `dist/${VUE_DIRNAME}/vue-plugin-boilerplate.mjs`,
         format: 'esm',
         exports: 'named'
       },
       {
-        file: 'dist/vue3/vue-plugin-boilerplate.min.mjs',
+        file: `dist/${VUE_DIRNAME}/vue-plugin-boilerplate.min.mjs`,
         format: 'esm',
         exports: 'named',
         plugins: [
@@ -226,7 +230,7 @@ if (!argv.format || argv.format === 'cjs') {
     output: [
       {
         compact: true,
-        file: 'dist/vue3/vue-plugin-boilerplate.cjs',
+        file: `dist/${VUE_DIRNAME}/vue-plugin-boilerplate.cjs`,
         format: 'cjs',
         name: 'PluginBoilerplate',
         exports: 'named',
@@ -234,7 +238,7 @@ if (!argv.format || argv.format === 'cjs') {
       },
       {
         compact: true,
-        file: 'dist/vue3/vue-plugin-boilerplate.min.cjs',
+        file: `dist/${VUE_DIRNAME}/vue-plugin-boilerplate.min.cjs`,
         format: 'cjs',
         name: 'PluginBoilerplate',
         exports: 'named',
@@ -269,12 +273,30 @@ if (!argv.format || argv.format === 'cjs') {
   buildFormats.push(cjsConfig)
 }
 
+// Types
 const typesConfig = {
-  input: './src/types.ts',
-  output: [{ file: 'dist/vue3/index.d.ts', format: 'es' }],
+  input: './src/types/index.d.ts',
+  output: [{ file: 'dist/index.d.ts', format: 'es' }],
   plugins: [dts()]
 }
 buildFormats.push(typesConfig)
+
+// Base style minifier
+const baseStyleMinifierConfig = {
+  input: `dist/${VUE_DIRNAME}/vue-plugin-boilerplate.css`,
+  output: {
+    file: `./dist/${VUE_DIRNAME}/vue-plugin-boilerplate.min.css`
+  },
+  plugins: [
+    scss({
+      fileName: `vue-plugin-boilerplate.min.css`,
+      sass: sass,
+      outputStyle: 'compressed'
+    })
+  ]
+}
+
+buildFormats.push(baseStyleMinifierConfig)
 
 // Export config
 export default buildFormats

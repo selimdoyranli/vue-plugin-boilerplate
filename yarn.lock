@@ -7142,7 +7142,7 @@ sass-loader@10.1.1:
     schema-utils "^3.0.0"
     semver "^7.3.2"
 
-sass@^1.18.0, sass@^1.58.0:
+sass@^1.18.0, sass@^1.64.1:
   version "1.64.1"
   resolved "https://registry.yarnpkg.com/sass/-/sass-1.64.1.tgz#6a46f6d68e0fa5ad90aa59ce025673ddaa8441cf"
   integrity sha512-16rRACSOFEE8VN7SCgBu1MpYCyN7urj9At898tyzdXFhC+a+yOX5dXwAR7L8/IdPJ1NB8OYoXmD55DM30B2kEQ==
@@ -8340,16 +8340,7 @@ vue-eslint-parser@^9.1.0, vue-eslint-parser@^9.3.0:
     lodash "^4.17.21"
     semver "^7.3.6"
 
-"vue-next-rollup-plugin-vue@npm:rollup-plugin-vue@^6.0.0":
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-vue/-/rollup-plugin-vue-6.0.0.tgz#e379e93e5ae9a8648522f698be2e452e8672aaf2"
-  integrity sha512-oVvUd84d5u73M2HYM3XsMDLtZRIA/tw2U0dmHlXU2UWP5JARYHzh/U9vcxaN/x/9MrepY7VH3pHFeOhrWpxs/Q==
-  dependencies:
-    debug "^4.1.1"
-    hash-sum "^2.0.0"
-    rollup-pluginutils "^2.8.2"
-
-"vue-prev-rollup-plugin-vue@npm:rollup-plugin-vue@^5.1.9":
+"vue-rollup-plugin-vue2@npm:rollup-plugin-vue@^5.1.9":
   version "5.1.9"
   resolved "https://registry.yarnpkg.com/rollup-plugin-vue/-/rollup-plugin-vue-5.1.9.tgz#8769cfdac5531c2d1970222b7887b883db37b866"
   integrity sha512-DXzrBUD2j68Y6nls4MmuJsFL1SrQDpdgjxvhk/oy04LzJmXJoX1x31yLEBFkkmvpbon6Q885WJLvEMiMyT+3rA==
@@ -8363,6 +8354,15 @@ vue-eslint-parser@^9.1.0, vue-eslint-parser@^9.3.0:
     rollup-pluginutils "^2.8.2"
     source-map "0.7.3"
     vue-runtime-helpers "^1.1.2"
+
+"vue-rollup-plugin-vue3@npm:rollup-plugin-vue@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-vue/-/rollup-plugin-vue-6.0.0.tgz#e379e93e5ae9a8648522f698be2e452e8672aaf2"
+  integrity sha512-oVvUd84d5u73M2HYM3XsMDLtZRIA/tw2U0dmHlXU2UWP5JARYHzh/U9vcxaN/x/9MrepY7VH3pHFeOhrWpxs/Q==
+  dependencies:
+    debug "^4.1.1"
+    hash-sum "^2.0.0"
+    rollup-pluginutils "^2.8.2"
 
 vue-runtime-helpers@^1.1.2:
   version "1.1.2"
