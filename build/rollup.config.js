@@ -11,7 +11,6 @@ import { terser } from 'rollup-plugin-terser'
 import dts from 'rollup-plugin-dts'
 import minimist from 'minimist'
 
-const projectRoot = path.resolve(__dirname, '..')
 const argv = minimist(process.argv.slice(2))
 const VUE_VERSION = process.env.VUE_VERSION
 
@@ -20,6 +19,9 @@ const vue = require(`vue-rollup-plugin-vue${VUE_VERSION}`)
 
 // Set vue directory name by vue version for src, dist and entry file
 const VUE_DIRNAME = `vue${VUE_VERSION}`
+
+// Extract babel preset-env config, to combine with esbrowserslist
+const babelPresetEnvConfig = require('../babel.config').presets.filter(entry => entry[0] === '@babel/preset-env')[0][1]
 
 // Get browserslist config and remove ie from es build targets
 const esbrowserslist = fs
@@ -35,7 +37,7 @@ const baseConfig = {
       alias({
         resolve: ['.js', '.jsx', '.ts', '.tsx', '.vue'],
         entries: {
-          '@': path.resolve(projectRoot, 'src')
+          '@': path.resolve(__dirname, '../src')
         }
       })
     ],
@@ -159,6 +161,7 @@ if (!argv.format || argv.format === 'umd') {
           [
             '@babel/preset-env',
             {
+              ...babelPresetEnvConfig,
               targets: esbrowserslist
             }
           ]

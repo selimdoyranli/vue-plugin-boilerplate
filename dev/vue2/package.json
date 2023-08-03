@@ -2,15 +2,15 @@
   "name": "vue2-dev",
   "private": true,
   "version": "0.0.0",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vue-tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "vue": "^2.6.12",
-    "vue-template-compiler": "^2.7.14"
+    "vue-template-compiler": "^2.6.12"
   },
   "devDependencies": {
     "sass": "^1.64.1",
